@@ -13,7 +13,8 @@ Required functionality:
   ----  | ---------- | -----
   21.07 | 9h         | "Login&registration", "Another note"
 
-Starting to work on this project:
+How to work on this project:
+
 1. Fork this repository (you will need a github account)
 2. Write code. Try to make meaningful commits.
-3. When test project is complete push code to github and send us a link to your repository
+3. When test project is complete push code to github and send us a link to your(forked) repository

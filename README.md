@@ -16,5 +16,5 @@ Required functionality:
 How to work on this project:
 
 1. Fork this repository (you will need a github account)
-2. Write code. Try to make meaningful commits.
+2. Write code. Make meaningful commits.
 3. When test project is complete push code to github and send us a link to your(forked) repository

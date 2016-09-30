@@ -1,4 +1,4 @@
-How to initiate project:
+How to run the project:
 * Clone the Repo.
 * On project root folder run: npm install && bower install
 * Initialize MongoDB

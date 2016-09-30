@@ -1,0 +1,86 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h1>Add Time Record</h1>
+		<hr>
+		<div class="alert alert-danger" ng-show="tc.error">
+            {{ tc.error }}
+        </div>
+        <div class="alert alert-success" ng-show="tc.message">
+            {{ tc.message }}
+        </div>
+		<form name="addTimeRecordForm" role="form" ng-submit="tc.save(addTimeRecordForm.$valid)" novalidate>
+			
+			<div class="form-group" show-errors>
+				<label for="date">Date:</label>
+				<input 
+					type="text" 
+					name="date"
+					class="form-control" 
+					id="date"
+					ng-model="tc.timeRecord.date"
+					placeholder="YYYY-MM-DD"
+					required
+					ui-date-mask="YYYY-MM-DD">
+				<div 
+                    ng-messages="addTimeRecordForm.date.$error" 
+                    role="alert">
+                    <p 
+                        class="help-block error-text" 
+                        ng-message="required">Date is required.</p>
+                    <p 
+                        class="help-block error-text" 
+                        ng-message="date">Invalid Date.</p>
+                </div><!-- ng-messages -->
+			</div><!-- form-group -->
+
+			<div class="form-group" show-errors>
+				<label for="time">Time:</label>
+				<input 
+					type="number" 
+					name="time"
+					class="form-control" 
+					id="time"
+					ng-model="tc.timeRecord.time"
+					placeholder="Time in Hours."
+					required>
+				<div 
+                    ng-messages="addTimeRecordForm.time.$error" 
+                    role="alert">
+                    <p 
+                        class="help-block error-text" 
+                        ng-message="required">Time is required.</p>
+                    <p 
+                        class="help-block error-text" 
+                        ng-message="number">Must be a Number.</p>
+                </div><!-- ng-messages -->
+			</div><!-- form-group -->
+
+			<div class="form-group" show-errors>
+				<label for="description">Description:</label>
+				<input 
+					type="text" 
+					name="description"
+					class="form-control" 
+					id="description"
+					ng-model="tc.timeRecord.description"
+					placeholder="Description."
+					required>
+				<div 
+                    ng-messages="addTimeRecordForm.description.$error" 
+                    role="alert">
+                    <p 
+                        class="help-block error-text" 
+                        ng-message="required">Description is required.</p>
+                </div><!-- ng-messages -->
+			</div><!-- form-group -->
+
+			<div class="form-group">
+				<input 
+					type="submit"
+					class="btn btn-primary"
+					value="Add Time Record">
+			</div><!-- form-group -->
+
+		</form><!-- addTimeRecordForm -->
+	</div><!-- col-sm-12 -->
+</div><!-- row -->

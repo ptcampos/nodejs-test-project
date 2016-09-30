@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h1>
+			Time Records Reports
+		</h1>
+		<div class="table-responsive">
+			<table class="table table-hover" ng-init="rc.init()">
+				<thead>
+					<tr>
+						<th class="col-sm-1">#</th>
+						<th class="col-sm-2">Date</th>
+						<th class="col-sm-2">Total Time</th>
+						<th class="col-sm-5">Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-show="rc.loading">
+						<td colspan="4">
+							<div class="alert alert-warning">
+								<p>Loading Reports...</p>
+							</div>
+						</td>
+					</tr>
+					<tr ng-show="!rc.groupedReports.length && !rc.loading">
+						<td colspan="5">
+							<div class="alert alert-info">
+								<p>No reports to show...</p>
+							</div>
+						</td>
+					</tr>
+					<tr ng-repeat="report in rc.groupedReports | orderBy : '-date'">
+						<td>{{ ($index + 1) }}</td>
+						<td>{{ report.date | date : 'dd/MM' }}</td>
+						<td>{{ report.totalTime }}h</td>
+						<td>{{ report.formattedNotes }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div><!-- table-responsive -->
+	</div><!-- col-sm-12 -->
+</div><!-- row -->

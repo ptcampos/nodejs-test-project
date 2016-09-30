@@ -1,0 +1,26 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+
+form.ng-submitted .ng-invalid {
+	border-color: #FA787E;
+}
+
+form.ng-pristine p.help-block {
+	display: none;
+}
+
+form.ng-submitted p.help-block {
+	display: inherit;
+}
+
+p.help-block.error-text {
+	text-align: left;
+	color: red;
+}

@@ -1,0 +1,63 @@
+<div class="row text-center">
+    <div class="col-sm-offset-5 col-sm-2">
+        <h3>Sign In</h3>
+        <div class="alert alert-danger" ng-show="ac.error">
+            {{ ac.error }}
+        </div>
+        <div class="well">
+            
+            <form name="signinForm" role="form" ng-submit="ac.signin(signinForm.$valid)" autocomplete="off" novalidate>
+                <div class="form-group" show-errors>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        class="form-control" 
+                        ng-model="ac.credentials.username" 
+                        placeholder="Username" 
+                        lowercase 
+                        required>
+                    <div 
+                        ng-messages="signinForm.username.$error" 
+                        role="alert">
+                        <p 
+                            class="help-block error-text" 
+                            ng-message="required">Username is required.</p>
+                    </div><!-- ng-messages -->
+                </div><!-- form-group -->
+        
+                <div class="form-group" show-errors>
+                  <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-control" 
+                    ng-model="ac.credentials.password" 
+                    placeholder="Password" 
+                    required>
+                  <div 
+                    ng-messages="signinForm.password.$error" 
+                    role="alert">
+                    <p class="help-block error-text" ng-message="required">Password is required.</p>
+                  </div><!-- ng-messages -->
+                </div><!-- form-group -->
+
+                <button 
+                    type="submit" 
+                    class="btn btn-primary btn-block"
+                    ng-disabled="ac.authenticating">
+                    <span ng-show="!ac.authenticating">Sign In</span>
+                    <span ng-show="ac.authenticating">Signing...</span>
+                </button>
+                
+                <br>
+                <p class="text-center"><small>Don't have an account yet?</small></p>
+                <a 
+                    ui-sref="auth.signup"
+                    class="btn btn-sm btn-success">Register Now</a>
+            </form><!-- signinForm -->
+
+        </div><!-- well -->
+        <p> <small>Paulo Campos &copy; 2016</small> </p>
+    </div><!-- col-sm-12 -->
+</div><!-- row -->

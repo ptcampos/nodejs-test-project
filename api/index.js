@@ -38,6 +38,7 @@ app.use(session({
     })
 }));
 
+//config passport
 require('./config/passport-initialize.server.config')(app);
 
 //require routes...

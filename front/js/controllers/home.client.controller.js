@@ -6,9 +6,9 @@
     .module('workReportApp')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$scope', '$state', 'TimeRecords'];
+  HomeController.$inject = ['$scope', '$state', 'TimeRecords', 'Auth'];
 
-  function HomeController ($scope, $state, TimeRecords) {
+  function HomeController ($scope, $state, TimeRecords, Auth) {
     var hc = this;
 
     hc.loading = true;

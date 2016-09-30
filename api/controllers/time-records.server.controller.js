@@ -39,7 +39,7 @@ exports.update = function (req, res) {
   var timeRecord = req.timeRecord;
 
   timeRecord.date = req.body.date;
-  timeRecord.time = req.body.totalTime;
+  timeRecord.time = req.body.time;
   timeRecord.description = req.body.description;
 
   timeRecord.save(function (err) {
@@ -74,6 +74,8 @@ exports.delete = function (req, res) {
  * List of TimeRecords
  */
 exports.list = function (req, res) {
+  //Returns only the users Records...
+  req.query.user = { '$in': [req.user._id] };
   TimeRecord.find(req.query).sort('nome').populate('user', 'displayName').exec(function (err, timeRecords) {
     if (err) {
       return res.status(400).send({

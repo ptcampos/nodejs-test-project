@@ -57,6 +57,16 @@ var workReportAppAPP = angular.module('workReportApp', ['ngResource', 'ui.router
           }
       },
     })
+    .state('main.editTimeRecord', {
+        url: '/:timeRecordId/edit-time-record',
+          views: {
+          'mainView': {
+            templateUrl: '/views/main/edit-time-record.client.view.html',
+            controller: 'EditTimeRecordController',
+                controllerAs: 'tc'
+          }
+      },
+    })
     .state('main.report', {
       url: '/report',
       views: {

@@ -6,9 +6,9 @@
     .module('workReportApp')
     .controller('AddTimeRecordController', AddTimeRecordController);
 
-  AddTimeRecordController.$inject = ['$scope', 'TimeRecords'];
+  AddTimeRecordController.$inject = ['$scope', '$state', 'TimeRecords'];
 
-  function AddTimeRecordController ($scope, TimeRecords) {
+  function AddTimeRecordController ($scope, $state, TimeRecords) {
     var tc = this;
 
     tc.error = null;
@@ -35,9 +35,6 @@
 
       timeRecord.$save(function (response) {
         tc.message = 'Time Record Added!';
-
-        // Clear form fields
-        tc.timeRecord = {};
       }, function (errorResponse) {
         tc.error = errorResponse.data.message;
       });

@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-sm-12">
-		<h1>Add Time Record</h1>
+		<h1>Update Time Record</h1>
 		<hr>
 		<div class="alert alert-danger" ng-show="tc.error">
             {{ tc.error }}
@@ -8,7 +8,15 @@
         <div class="alert alert-success" ng-show="tc.message">
             {{ tc.message }}
         </div>
-		<form name="addTimeRecordForm" role="form" ng-submit="tc.save(addTimeRecordForm.$valid)" novalidate>
+        <div class="alert alert-info" ng-show="tc.loading">
+        	Loading Time Record...
+        </div>
+		<form 
+			name="editTimeRecordForm" 
+			role="form" 
+			ng-submit="tc.save(editTimeRecordForm.$valid)" 
+			novalidate 
+			ng-init="tc.findOne()">
 			
 			<div class="form-group" show-errors>
 				<label for="date">Date:</label>
@@ -22,7 +30,7 @@
 					required
 					ui-date-mask="YYYY-MM-DD">
 				<div 
-                    ng-messages="addTimeRecordForm.date.$error" 
+                    ng-messages="editTimeRecordForm.date.$error" 
                     role="alert">
                     <p 
                         class="help-block error-text" 
@@ -44,7 +52,7 @@
 					placeholder="Time in Hours."
 					required>
 				<div 
-                    ng-messages="addTimeRecordForm.time.$error" 
+                    ng-messages="editTimeRecordForm.time.$error" 
                     role="alert">
                     <p 
                         class="help-block error-text" 
@@ -66,7 +74,7 @@
 					placeholder="Description."
 					required>
 				<div 
-                    ng-messages="addTimeRecordForm.description.$error" 
+                    ng-messages="editTimeRecordForm.description.$error" 
                     role="alert">
                     <p 
                         class="help-block error-text" 
@@ -78,7 +86,7 @@
 				<input 
 					type="submit"
 					class="btn btn-primary"
-					value="Add Time Record">
+					value="Update Time Record">
 				<a
 					ui-sref="main.home"
 					class="btn btn-default">
@@ -86,6 +94,6 @@
 				</a>
 			</div><!-- form-group -->
 
-		</form><!-- addTimeRecordForm -->
+		</form><!-- editTimeRecordForm -->
 	</div><!-- col-sm-12 -->
 </div><!-- row -->

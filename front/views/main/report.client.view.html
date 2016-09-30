@@ -3,13 +3,14 @@
 		<h1>
 			Time Records Reports
 		</h1>
+		<hr>
 		<div class="table-responsive">
-			<table class="table table-hover" ng-init="rc.init()">
+			<table class="table table-hover" ng-init="rc.init()" ts-wrapper>
 				<thead>
 					<tr>
 						<th class="col-sm-1">#</th>
-						<th class="col-sm-2">Date</th>
-						<th class="col-sm-2">Total Time</th>
+						<th class="col-sm-2" ts-criteria="date" ts-default="descending">Date</th>
+						<th class="col-sm-2" ts-criteria="totalTime">Total Time</th>
 						<th class="col-sm-5">Notes</th>
 					</tr>
 				</thead>
@@ -28,9 +29,9 @@
 							</div>
 						</td>
 					</tr>
-					<tr ng-repeat="report in rc.groupedReports | orderBy : '-date'">
+					<tr ng-repeat="report in rc.groupedReports | orderBy : '-date'" ts-repeat>
 						<td>{{ ($index + 1) }}</td>
-						<td>{{ report.date | date : 'dd/MM' }}</td>
+						<td>{{ report.date | date : 'dd.MM' }}</td>
 						<td>{{ report.totalTime }}h</td>
 						<td>{{ report.formattedNotes }}</td>
 					</tr>

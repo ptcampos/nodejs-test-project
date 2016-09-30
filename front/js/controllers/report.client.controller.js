@@ -11,6 +11,7 @@
   function ReportController ($scope, $state, TimeRecords) {
     var rc = this;
 
+    rc.loading = true;
     rc.groupedReports = [];
     rc.init = init;
 
@@ -79,16 +80,6 @@
         }
 
         return formatted;
-    }
-
-    function removeTimeRecord(timeRecord, index)
-    {
-    	var confirm = window.confirm('Are you sure you want to delete this item?');
-    	if(confirm){
-    		timeRecord.$remove(function(){
-    			rc.timeRecords.splice(index, 1);
-    		});
-    	}
     }
   }
 })();

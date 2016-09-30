@@ -1,8 +1,8 @@
 How to run the project:
 * Clone the Repo.
-* On project root folder run: npm install && bower install
+* On project's root directory run: npm install && bower install
 * Initialize MongoDB
-* On root folder run: node api/index.js
+* On root directory run: node api/index.js
 * Navigate to http://localhost:9000
 
 Test project description:

@@ -1,3 +1,10 @@
+How to initiate project:
+* Clone the Repo.
+* On project root folder run: npm install && bower install
+* Initialize MongoDB
+* On root folder run: node api/index.js
+* Navigate to http://localhost:9000
+
 Test project description:
 * Project should consist of 2 parts: back-end (API) and front-end.
 * You should use mongodb database (mongoose package or any other)
